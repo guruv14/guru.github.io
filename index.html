@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome</title>
+<link rel="shortcut icon" type="image/x-icon" href="src/favicon.ico">
+<script src="https://kit.fontawesome.com/ebbc1aa60f.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+<script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+<!-- Add Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+    @font-face {
+        font-family: 'custom';
+        src: url(./fonts/VCR_OSD_MONO_1.001.ttf);
+    }
+    @font-face {
+        font-family: 'custom1';
+        src: url(./fonts/GothamBook.ttf);
+    }
+    @font-face {
+        font-family: 'custom2';
+        src: url(./fonts/GothamBold.ttf);
+    }
+    html{
+        scroll-behavior: smooth;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow-y: auto;
+        background: #6441A5;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #2a0845, #6441A5);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #2a0845, #6441A5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        /* background: rgba(11, 40, 45, 1.0);
+        background: linear-gradient(135deg, rgba(11, 40, 45, 1.0), rgba(15, 24, 41, 1.0)); */
+    }
+    .section {
+        height: 100vh;
+        font-family: 'custom';
+    }
+    .home {
+        position: relative;
+    }
+    .home .container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 700px;
+        width: 80%;
+        background-color: rgba(251, 251, 250, 0.09);
+        border-radius: 30px;
+    }
+    .home .content {
+        padding: 20px;
+        text-align: center;
+        color: #fff;
+        font-size: 24px;
+    }
+    .home .content p {
+        font-size: 30px;
+        font-family: 'custom';
+    }
+    /* Add styles for Font Awesome icons */
+    .home .social-icons {
+        margin-top: 20px;
+    }
+    .home .social-icons a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 50px;
+        margin: 0 10px;
+        transition: color 0.3s ease;
+    }
+    .home .social-icons a:hover {
+        color: #ffd700; /* Change color on hover */
+    }
+    /* Styles for the chevron icon */
+    .home .chevron {
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 20px;
+        color: #fff;
+        cursor: pointer;
+        opacity: 0;
+        transition: opacity 0.5s ease, bottom 0.5s ease;
+        animation: bounce 2s infinite alternate;
+    }
+    .home .chevron.show {
+        opacity: 1;
+        bottom: 3em;
+    }
+    @keyframes bounce {
+        0% {
+            transform: translateY(0);
+        }
+        100% {
+            transform: translateY(-10px);
+        }
+    }
+
+    /* ABOUT SECTION */
+    
+    .about {
+        color: #fff;
+        font-size: 20px;
+        padding-top: 100px;
+    }
+    .about .container {
+    position: relative; /* Add position relative to allow absolute positioning of the chevron */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 800px;
+    width: 80%;
+    margin: auto;
+    background-color: rgba(251, 251, 250, 0.09);
+    border-radius: 30px;
+}
+
+.about .content {
+    width: 100%; /* Adjust the width as needed */
+    display: flex;
+    flex-direction: row;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.about .profile-pic {
+    flex: 1;
+    margin:  40px; /* Remove margin for mobile */
+    /* margin-bottom: 20px; Add some space between profile pic and text */
+    display: flex; /* Add display flex */
+    justify-content: center; /* Center horizontally */
+    align-items: center;
+    
+}
+.about .profile-pic .img{
+    width:100px; height:100px;
+}
+.about .text {
+    flex: 2;
+}
+.about .about-description{
+    margin-top: 40px;
+    margin-right: 1em;
+    margin-bottom: 2em;
+    padding: 10px;
+}
+@media screen and (max-width: 768px) {
+    .about .content {
+        flex-direction: column; /* Stack items in a column layout for mobile */
+    }
+
+    .about .profile-pic {
+        margin-bottom: 0; /* Remove bottom margin for mobile */
+    }
+    .about .container {
+        min-height: 300px; /* Set a minimum height for responsiveness */
+        max-height: 700px; /* Set a maximum height for responsiveness */
+    }
+    .about{
+        font-size: 18px;
+    }
+}
+.about .chevron {
+    position: absolute;
+    bottom: -40px; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.5s ease, bottom 0.5s ease;
+    animation: bounce 2s infinite alternate;
+}
+
+.about .chevron.show {
+    opacity: 1;
+    bottom: 3em; /* Adjust as needed */
+}
+.propic{
+    border-radius: 20px;
+    width:8em;
+    height:10em;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+
+
+
+
+
+
+
+    
+    /* PROJECT SECTIONS */
+    .project {
+        /* background: rgba(11, 40, 45, 1.0);
+        background: linear-gradient(135deg, rgba(11, 40, 45, 1.0), rgba(15, 24, 41, 1.0)); */
+        background: #6441A5;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #2a0845, #6441A5);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #2a0845, #6441A5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        color: #fff;
+        padding-top: 100px;
+    }
+    .contact {
+        color: #fff;
+        /* background: rgba(11, 40, 45, 1.0);
+        background: linear-gradient(135deg, rgba(11, 40, 45, 1.0), rgba(15, 24, 41, 1.0)); */
+        background: #6441A5;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2a0845, #6441A5);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2a0845, #6441A5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        padding-top: 100px;
+    }
+    /* ham */
+    * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        font-family: 'custom';
+    }
+    .alert {
+        position: fixed;
+        top: 2%;
+        right: 1%;
+        background: rgb(42,8,69);
+background: radial-gradient(circle, rgba(42,8,69,1) 0%, rgba(45,11,75,1) 7%, rgba(70,36,115,1) 100%, rgba(100,65,165,1) 100%);
+        /* background: rgba(11, 40, 45, 1.0);
+        background: linear-gradient(135deg, rgba(11, 40, 45, 1.0), rgba(15, 24, 41, 1.0)); */
+        color: #fff;
+        font-weight: 800;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+        padding: 20px;
+        width: 300px;
+        height: 100vh;
+        border-radius: 10px;
+        transform: translateX(150%);
+        transition: transform 0.3s ease-in-out;
+    }
+    .alert .navigation1 {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        text-align: center;
+    }
+    .alert .navigation1 li a {
+        text-decoration: none;
+        color: #fff;
+    }
+    .alert .navigation li a {
+        text-decoration: none;
+        color: #fff;
+    }
+    .alert p {
+        margin: 30px;
+        letter-spacing: 1px;
+    }
+    .alert i {
+        display: flex;
+        justify-content: flex-end;
+        font-size: 30px;
+        cursor: pointer;
+        color: #fff;
+    }
+    header {
+        position: sticky;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        font-size: 20px;
+        padding: 20px 60px;
+        background: #6441A5;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #2a0845, #6441A5);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #2a0845, #6441A5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        /* background: rgba(11, 40, 45, 1.0);
+        background: linear-gradient(135deg, rgba(11, 40, 45, 1.0), rgba(15, 24, 41, 1.0)); */
+        position: fixed; 
+    }
+    header .logo {
+        color: #fff;
+        font-weight: bold;
+        font-size: 2.0em;
+        text-decoration: none;
+    }
+    header ul {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        gap: 100px;
+        list-style: none;
+    }
+    header .navigation li a {
+        text-decoration: none;
+        color: #fff;
+        transition: text-shadow 0.3s ease;
+     }
+    header .navigation li a:hover {
+        text-shadow: 2px 7px 15px rgba(190,197,238,0.9);
+        /* border-bottom: 1px solid #fff; */
+    }
+    header .hamburger {
+        display: none;
+        color: #fff;
+        cursor: pointer;
+    }
+    @media(max-width:991px) {
+        header .navigation {
+            display: none;
+        }
+        header .hamburger {
+            display: block;
+        }
+    }
+    .home .background-animation {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+    .home .background-animation ul {
+        display: block;
+        width: 100%;
+        height: inherit;
+        list-style-type: none;
+    }
+    .home .background-animation li:nth-child(1) {
+        position: absolute;
+        left: 10%;
+        height: 30px;
+        width: 30px;
+    border-radius: 8px;
+        background: rgba(255, 255, 255, .1);
+    }
+    .home .background-animation li:nth-child(2) {
+    position: absolute;
+    left: 30%;
+    height: 45px;
+    width: 45px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, .11);
+}
+
+.home .background-animation li:nth-child(3) {
+    position: absolute;
+    left: 50%;
+    height: 50px;
+    width: 50px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, .12);
+}
+
+.home .background-animation li:nth-child(4) {
+    position: absolute;
+    left: 80%;
+    height: 20px;
+    width: 20px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, .12);
+}
+.home .background-animation li:nth-child(5) {
+    position: absolute;
+    left: 60%;
+    height: 25px;
+    width: 25px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, .12);
+}
+.home .background-animation li:nth-child(6) {
+    position: absolute;
+    left: 15%;
+    height: 35px;
+    width: 35px;
+    border-radius: 11px;
+    background: rgba(255, 255, 255, .12);
+}
+.home .background-animation li:nth-child(7) {
+    position: absolute;
+    left: 80%;
+    height: 35px;
+    width: 35px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, .12);
+}
+
+.home .background-animation li:nth-child(8) {
+    position: absolute;
+    left: 95%;
+    height: 15px;
+    width: 15px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, .12);
+}
+
+.home .background-animation li:nth-child(9) {
+    position: absolute;
+    left: 55%;
+    height: 20px;
+    width: 20px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, .12);
+}
+.home .background-animation li:nth-child(9) {
+    position: absolute;
+    left: 5%;
+    height: 20px;
+    width: 20px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, .12);
+}
+    .home .background-animation li {
+        animation: animate 15s linear 1s infinite;
+    }
+    @keyframes animate {
+        0%, 100% {
+            opacity: 0; /* Initially hide the boxes */
+        }
+        5%, 90% {
+            opacity: 1; /* Show the boxes slowly */
+        }
+        from {
+            transform: translateY(+1500%) rotate(180deg)
+        }
+        to {
+            transform: translateY(-150%) rotate(360deg)
+        }
+    }
+</style>
+</head>
+<body>
+ 
+<header>
+    <div class="logo">G</div>
+    <!-- desktop nav -->
+    <ul class="navigation">
+        <li><a href="#">HOME</a></li>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#project">PROJECTS</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+    </ul>
+    <div class="hamburger">
+        <i class="fa-solid fa-bars on" id="on"></i>
+    </div>
+    <!-- mobile nav -->
+    <div class="alert">
+        <ul class="navigation1">
+            <i class='bx bxs-x-circle close'></i>
+            <li><a href="#" class="out">HOME</a></li>
+            <li><a href="#about" class="out">ABOUT</a></li>
+            <li><a href="#project" class="out">PROJECTS</a></li>
+            <li><a href="#contact" class="out">CONTACT</a></li>
+        </ul>
+    </div>
+</header>
+
+<section class="home section">
+    <div class="background-animation">
+        <ul>
+            <li></li> <li></li> <li></li> <li></li> <li></li> 
+            <li></li> <li></li> <li></li> <li></li><li></li>
+           
+        </ul>
+    </div>
+    <div class="container">
+        <div class="content">
+            <p style="font-weight: bold; margin-bottom: .5em;"> MY NAME </p>
+            <p id="typer"></p>
+            <!-- Add Font Awesome icons with sample links -->
+            <div class="social-icons">
+                <a href="https://github.com/" target="_blank"><i class="fab fa-github-square"></i></a>
+                <a href="mailto:example@example.com" target="_blank"><i class="fas fa-envelope-square"></i></a>
+                <a href="https://wa.me/1234567890" target="_blank"><i class="fab fa-whatsapp-square"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- Add the chevron icon -->
+    <i class="fas fa-chevron-down chevron"></i>
+</section>
+
+<section class="about section" id="about">
+    <div class="container">
+        <div class="content">
+            <div class="profile-pic">
+                <img src="./src/profile.jpg" alt="Profile Picture" class="propic">
+            </div>
+            <div class="about-description">
+                <h2>About </h2>
+                <p><br>Dedicated student, proactively participating in problem solving with keen interest in mastering networks and security exhibiting profound interest in evolving technologies with a focus on practical applications..</p>
+            </div>
+        </div>
+    </div>
+</div>
+    
+</section>
+
+
+<section class="project section" id="project">
+    <div class="container" id="abt">
+        <div class="content">
+            <h2>Projects</h2>
+            <p>This is the projects section.</p>
+        </div>
+    </div>
+</section>
+
+<section class="contact section" id="contact">
+    <div class="container">
+        <div class="content">
+            <h2>Contact</h2>
+            <p>This is the contact section.</p>
+        </div>
+    </div>
+</section>
+
+<script>
+    const type = "Developer | Student | Coder";
+    const speed = 80;
+    let index = 0;
+    function Type() {
+        if (index < type.length) {
+            document.getElementById("typer").innerHTML += type.charAt(index);
+            index++;
+            setTimeout(Type, speed);
+        }
+    }
+    
+    Type();
+    
+    // Delay the appearance of chevron icon
+    setTimeout(() => {
+        document.querySelector('.chevron').classList.add('show');
+    }, 2000); // Adjust the delay time as needed
+
+    // Add event listener to chevron icon
+    document.querySelector('.chevron').addEventListener('click', function() {
+        // Scroll to the about section
+        document.querySelector('.about').scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+
+    // Hamburger menu functionality
+    $(document).ready(function () {
+        $(".on").click(function () {
+            $('.alert').css({
+                'transform': 'translateX(0)',
+            });
+        });
+
+        $(".close").click(function () {
+            $('.alert').css({
+                'transform': 'translateX(150%)',
+            });
+        });
+
+        $(".out").click(function () {
+            $('.alert').css({
+                'transform': 'translateX(150%)',
+            });
+        })
+    });
+</script>
+</body>
+</html>
